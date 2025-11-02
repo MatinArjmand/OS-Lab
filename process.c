@@ -35,8 +35,9 @@ int main() {
         close(pipefd[0]); // close reading
         for (int i = 0; i < NUMS; i++) {
             write(pipefd[1], &i, sizeof(i));
+            printf("write %d\n", i);
+            fflush(stdout);
         }
-        printf("write %d", i);
         close(pipefd[1]);
         wait(NULL);
         printf("producer finished\n");
