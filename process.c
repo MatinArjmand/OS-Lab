@@ -4,7 +4,7 @@
 #include <sys/wait.h>
 #include <time.h>
 
-#define NUMS 100000
+#define NUMS 10
 
 int main() {
     int pipefd[2];
@@ -36,6 +36,7 @@ int main() {
         for (int i = 0; i < NUMS; i++) {
             write(pipefd[1], &i, sizeof(i));
         }
+        printf("write %d", i);
         close(pipefd[1]);
         wait(NULL);
         printf("producer finished\n");

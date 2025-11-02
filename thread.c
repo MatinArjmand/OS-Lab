@@ -6,7 +6,7 @@
 #include <pthread.h>
 
 #define BUFFER_SIZE 2000
-#define NUMS 100000
+#define NUMS 10
 
 int buffer[BUFFER_SIZE];
 int count = 0;
@@ -28,7 +28,7 @@ void* producer(void* arg) {
         count++;
         produced_value++;
         pthread_cond_signal(&cond_full);
-        pthread_mutex_unlock(&mutex);
+        pthread_mutex_unlock(&mutex);d
         //sleep(1);
     }
     return NULL;
