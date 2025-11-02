@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <sys/wait.h>
+#include <time.h>
 
 #define NUMS 100000
 
@@ -56,7 +57,7 @@ int main() {
 
     clock_t end_time = clock();
     double execution_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
-    printf("Execution time: %.4f seconds\n", execution_time)
+    printf("Execution time: %.4f seconds\n", execution_time);
 
     return 0;
 }
