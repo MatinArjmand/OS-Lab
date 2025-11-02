@@ -51,10 +51,10 @@ int main() {
         int value;
         while (read(pipefd[0], &value, sizeof(value)) > 0) {
             sum += value;
+            printf("consumer result: sum = %d\n", sum);
+            fflush(stdout);
+            usleep(50000);
         }
-        printf("consumer result: sum = %d\n", sum);
-        fflush(stdout);
-        usleep(50000);
         close(pipefd[0]);
         exit(0);
     }
