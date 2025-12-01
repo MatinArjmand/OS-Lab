@@ -12,6 +12,7 @@ if [ $? -ne 0 ]; then
 fi
 echo
 
+
 echo "=======  Performance Test  ======="
 echo
 
